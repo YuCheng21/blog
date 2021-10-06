@@ -1,0 +1,232 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta name="robots" content="index,nofollow"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hexo 基本配置 | YuCheng</title><meta name="keywords" content="子網域,網站地圖,搜尋引擎收錄,Google Analytics"><meta name="author" content="YuCheng,fyc621@gmail.com"><meta name="copyright" content="YuCheng"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="使用 Hexo 架構的個性化配置。"><meta property="og:type" content="article"><meta property="og:title" content="Hexo 基本配置"><meta property="og:url" content="https://blog.yucheng.me/post/hexo-configuration/index.html"><meta property="og:site_name" content="YuCheng"><meta property="og:description" content="使用 Hexo 架構的個性化配置。"><meta property="og:locale" content="zh_TW"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/YuCheng21/cdn-yucheng@master/blog/cover/005.svg"><meta property="article:published_time" content="2020-11-15T15:44:59.000Z"><meta property="article:modified_time" content="2021-10-06T09:52:32.458Z"><meta property="article:author" content="YuCheng"><meta property="article:tag" content="子網域"><meta property="article:tag" content="網站地圖"><meta property="article:tag" content="搜尋引擎收錄"><meta property="article:tag" content="Google Analytics"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/YuCheng21/cdn-yucheng@master/blog/cover/005.svg"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/YuCheng21/cdn-yucheng@master/blog/favicon/favicon.ico"><link rel="canonical" href="https://blog.yucheng.me/post/hexo-configuration/"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//www.google-analytics.com" crossorigin="crossorigin"><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"><link rel="manifest" href="/manifest.json"><link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/YuCheng21/cdn-yucheng@master/blog/favicon/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/YuCheng21/cdn-yucheng@master/blog/favicon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/YuCheng21/cdn-yucheng@master/blog/favicon/favicon-16x16.png"><link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/YuCheng21/cdn-yucheng@master/blog/favicon/safari-pinned-tab.svg" color="#5bbad5"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-176722311-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-176722311-1")</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查詢的內容：${query}"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切換為繁體","cht_to_chs":"你已切換為簡體","day_to_night":"你已切換為深色模式","night_to_day":"你已切換為淺色模式","bgLight":"#4CAF50","bgDark":"#214B23","position":"top-right"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE={isPost:!0,isHome:!1,isHighlightShrink:!1,isToc:!0,postUpdate:"2021-10-06 17:52:32"}</script><noscript><style>#nav{opacity:1}.justified-gallery img{opacity:1}#post-meta time,#recent-posts time{display:inline!important}</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><style>.app-refresh{position:fixed;top:-2.2rem;left:0;right:0;z-index:99999;padding:0 1rem;font-size:15px;height:2.2rem;transition:all .3s ease}.app-refresh-wrap{display:flex;color:#fff;height:100%;align-items:center;justify-content:center}.app-refresh-wrap a{color:#fff;text-decoration:underline;cursor:pointer}</style><meta name="generator" content="Hexo 5.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="https://cdn.jsdelivr.net/gh/YuCheng21/cdn-yucheng@master/blog/logo/Logo-Avatar.jpg" onerror='onerror=null,src="https://cdn.jsdelivr.net/gh/YuCheng21/cdn-yucheng@master/blog/404/404_cat.svg"' alt="avatar"></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">標籤</div><div class="length-num">14</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分類</div><div class="length-num">3</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i> <span>首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i> <span>歸檔</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i> <span>分類</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i> <span>標籤</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-info-circle"></i> <span>關於</span></a></div></div></div></div><div id="body-wrap"><header class="no-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">YuCheng</a></span><span id="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i> <span>搜尋</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i> <span>首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i> <span>歸檔</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i> <span>分類</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i> <span>標籤</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-info-circle"></i> <span>關於</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">Hexo 基本配置</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2020-11-15T15:44:59.000Z" title="發表於 2020-11-15 23:44:59">2020-11-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2021-10-06T09:52:32.458Z" title="更新於 2021-10-06 17:52:32">2021-10-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Hexo/">Hexo</a></span></div><div class="meta-secondline"></div></div></div><article class="post-content" id="article-container"><h2 id="自訂文章網址"><a href="#自訂文章網址" class="headerlink" title="自訂文章網址"></a>自訂文章網址</h2><ol><li>在 <code>permalink</code> 中使用一個新增的變數 <code>urlname</code>。</li><li>在 <code>permalink_defaults</code> 中設定 <code>urlname</code> 的預設值為 <code>index</code>。</li></ol><p>之後要自訂文章網址時，只需要在 Markdown 文件中的 Front-matter 內設定 urlname 就可以客製化文章網址了。</p><ul><li><p>/_config.yml</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">post/:urlname/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br><span class="line">  <span class="attr">urlname:</span> <span class="string">index</span></span><br></pre></td></tr></table></figure></li></ul><p>未來在要發布的文章 Front-matter 上增加剛剛設定的 <code>urlname</code> 並設定自訂網址即可自訂文章網址。</p><ul><li><p>example_post.md</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">layout: post</span><br><span class="line">urlname: 文章網址</span><br><span class="line">title: 文章標題</span><br><span class="line">---</span><br></pre></td></tr></table></figure></li></ul><p><img src="https://cdn.jsdelivr.net/gh/YuCheng21/cdn-yucheng@master/blog/loading.gif" data-lazy-src="custom-URL-results.png" alt="自訂網址效果"></p><h2 id="自訂網站網址"><a href="#自訂網站網址" class="headerlink" title="自訂網站網址"></a>自訂網站網址</h2><p>以設定 <code>example.com</code> 網域為例：</p><h3 id="設定-Hexo-配置檔"><a href="#設定-Hexo-配置檔" class="headerlink" title="設定 Hexo 配置檔"></a>設定 Hexo 配置檔</h3><ul><li><p>/_config.yml</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="string">https://example.com</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br></pre></td></tr></table></figure></li></ul><blockquote><p>如果網站存放在子目錄中，例如 <code>http://example.com/blog</code>，請將 url 設為 <code>http://example.com/blog</code> 並把 <code>root</code> 設為 <code>/blog/</code>。</p></blockquote><h3 id="設定網址-DNS"><a href="#設定網址-DNS" class="headerlink" title="設定網址 DNS"></a>設定網址 DNS</h3><p>前往網址供應商的設定頁面設定 DNS</p><ul><li>A @ Github Pages<ul><li>A @ 185.199.108.153</li><li>A @ 185.199.109.153</li><li>A @ 185.199.110.153</li><li>A @ 185.199.111.153</li></ul></li><li>CNAME @ Github Repositories<ul><li>CNAME www example.com</li></ul></li></ul><p>以上有兩種類型設定分別是 <code>A 記錄</code> 和 <code>CNAME 記錄</code>，兩者重點都是在設定<code>名稱</code>和<code>內容</code>，不同的點在於：</p><ul><li>A 記錄是以<code>名稱</code>指向 <code>IP 地址（內容）</code>。</li><li>CNAME 記錄是以<code>名稱</code>指向<code>伺服器名稱（內容）</code></li></ul><p>這裡指的<strong>名稱</strong>其實也是指伺服器名稱，但在設定上只需要設定子網域就可以，例如像名稱 <code>www</code> 對應的就是 <code>www.example.com</code>，而<code>blog</code> 對應的就是 <code>blog.example.com</code>。www 和 blog 這部分也叫做子網域，每個子網域都是獨立分開的，如果不打算使用子網域，要直接使用主網域則設定 <code>@</code> 對應在 <code>example.com</code> 上。</p><p>了解名稱的意義後接著就要決定這個網域要指向哪裡，分別有兩種方法為 <code>A 記錄</code>與 <code>CNAME 記錄</code>。A 記錄指向的是 IP 地址，例如 xxx.xxx.xxx.xxx。CNAME 記錄指向的是伺服器名稱，例如 example.com。在設定 DNS 的時候要選擇 A 還是 CNAME 可以看自己的狀況決定。</p><p>上述例子是用 A 記錄以 <code>example.com</code> 指向 185.199.108.153，也就是 Github Pages 的地址，再用 CNAME 記錄以 <code>www.example.com</code> 指向 example.com。這樣一來，不管是 <code>example.com</code> 還是 <code>www.example.com</code> 最後都可以訪問到 Github Pages 的地址。</p><h3 id="設定-Github-Repositories"><a href="#設定-Github-Repositories" class="headerlink" title="設定 Github Repositories"></a>設定 Github Repositories</h3><ul><li>Github Repositories/Setting/Option/GitHub Pages<ul><li>Source<ol><li>Branch: <code>master</code><br>設定自己要發佈哪個分支，這裡選擇 master。</li><li>Folder: <code>/root</code><br>設定要發佈的資料夾位置，如果放在根目錄就選擇 root。</li><li>Save</li></ol></li><li>Custom domain<ul><li>example.com<br>這裡設定完 Custom domain 後會產生一個 commit，在根目錄建立一個 <strong>CNAME</strong> 檔案，裡面存放你的自訂網域，Custom domain 會以 CNAME 檔案內的網域為準，因此你也可以自己建立 CNAME 來設定 Custom domain，或直接複製 Github Pages 產生的 CNAME 放到 <code>/source/</code> 目錄下，這樣以後每次發佈網站之後 CNAME 也才會在網站的根目錄上。</li></ul></li></ul></li></ul><h3 id="設定-CNAME"><a href="#設定-CNAME" class="headerlink" title="設定 CNAME"></a>設定 CNAME</h3><ul><li><p>/source/CNAME</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">example.com</span><br></pre></td></tr></table></figure></li></ul><p>至於為什麼要創建 CNAME 呢？前面設定網域導向到 Github Pages 的地址後還有一個問題是，Github Pages 的用戶數很多，當別人從你的網域指向他們的地址後，他們不知道來自這個網域的訪問要導向哪個用戶的儲存庫，因此在儲存庫的跟資料夾底下放一個檔案叫 <code>CNAME</code>，裡面儲存你的網域名稱，Github Pages 會去從這個檔案中知道這個儲存庫是要接收來自 <code>CNAME</code> 儲存的網域名稱，把訪問導向你的儲存庫。</p><h2 id="設定新增文章格式"><a href="#設定新增文章格式" class="headerlink" title="設定新增文章格式"></a>設定新增文章格式</h2><p>通常使用 <code>hexo new post &lt;title&gt;</code> 來新增文章時，是直接使用 &lt;title&gt; 來當作資料夾和檔案的名稱，當檔案多的時候可能會有些不好管理，這裡設定 <code>new_post_name</code> 來調整資料夾和檔案的名稱。</p><ul><li><p>/_config.yml</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">new_post_name:</span> <span class="string">:year:month:day</span> <span class="bullet">-</span> <span class="string">:title.md</span></span><br></pre></td></tr></table></figure></li></ul><p>這樣檔案開頭都會統一以日期當作編號，可以了解文章的發布日期當作參考。</p><blockquote><p>同時也可以在 <code>/scaffolds</code> 內的 post 或 draft 設定新增的文章 Front-matter 預設的格式。</p></blockquote><h2 id="設定不渲染的檔案"><a href="#設定不渲染的檔案" class="headerlink" title="設定不渲染的檔案"></a>設定不渲染的檔案</h2><p>在發布網站時 Hexo 會將 <code>/source</code> 下的 Markdown 檔案經過 <code>/themes</code> 內選擇的主題進行渲染，如果有不想要經過主題渲染的檔案的話，可以在配置檔案中設定例外檔案。</p><ul><li><p>/_config.yml</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">skip_render:</span> <span class="string">README.md</span></span><br></pre></td></tr></table></figure></li></ul><blockquote><p>忽略 README.md 讓上傳到 Github 上時，使用原始的 README.md 檔案，顯示儲存庫的說明文件。</p></blockquote><h2 id="使用各別文章資料夾"><a href="#使用各別文章資料夾" class="headerlink" title="使用各別文章資料夾"></a>使用各別文章資料夾</h2><p>文章內要使用檔案時可以將檔案放在 <code>/source/images</code> 中使用，當文章多的時候同樣可能會不好管理，這裡通過設定 <code>post_asset_folder</code> 來開啟各別文章資料夾。</p><ul><li><p>/_config.yml</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></li></ul><p>這樣每當使用 <code>hexo new post &lt;title&gt;</code> 建立新文章時，同時會在 <code>_post</code> 內建立一個和 &lt;title&gt; 同名的資料夾，將文章需要的檔案放在資料夾內，就可以直接使用檔案。</p><h2 id="首頁每頁顯示的文章數"><a href="#首頁每頁顯示的文章數" class="headerlink" title="首頁每頁顯示的文章數"></a>首頁每頁顯示的文章數</h2><ul><li><p>/_config.yml</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 首頁設定</span></span><br><span class="line"><span class="comment"># path: 網站首頁根路徑。（預設 = &#x27;&#x27;）</span></span><br><span class="line"><span class="comment"># per_page: 每頁顯示的文章數量（0 = 禁用分頁）</span></span><br><span class="line"><span class="comment"># order_by: 文章排序（預設按日期遞減排序）</span></span><br><span class="line"><span class="attr">index_generator:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="number">6</span></span><br><span class="line">  <span class="attr">order_by:</span> <span class="string">-date</span></span><br></pre></td></tr></table></figure></li></ul><h2 id="sitemap-xml-搜尋引擎爬蟲"><a href="#sitemap-xml-搜尋引擎爬蟲" class="headerlink" title="sitemap.xml 搜尋引擎爬蟲"></a>sitemap.xml 搜尋引擎爬蟲</h2><p>設定 Google 搜尋引擎收錄資料</p><p>進入 <a target="_blank" rel="noopener" href="https://search.google.com/search-console/about?hl=zh-TW">Google Search Console</a> 驗證自己的網域，驗證網域的方式有很多種，選擇一種適合自己的方法即可。</p><p>接下來要使用 Google Search Concole 的 Sitemap 功能，將網站的 Sitemap 提交給 Google，提供給搜尋引擎爬蟲使用。這裡先安裝可以自動產生 <code>sitemap.xml</code> 的套件 <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-generator-sitemap">hexo-generator-sitemap</a>。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure><p>接著在 <code>_config.yml</code> 增加 Sitemap 設定</p><ul><li><p>/_config.yml</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Sitemap</span></span><br><span class="line"><span class="comment"># path：sitemap 路徑</span></span><br><span class="line"><span class="comment"># tags：是否要包含標籤（不包含標籤頁）</span></span><br><span class="line"><span class="comment"># categories：是否要包含分類（不包含分類頁）</span></span><br><span class="line"><span class="attr">sitemap:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">sitemap.xml</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure></li></ul><p>之後每當 Hexo 產生網站的靜態資源時，也會自動產生一個 <code>sitemap.xml</code> 在 Public 目錄下，也就是發佈到網站上時會在根目錄上 <code>example.com/sitemap.xml</code>，之後再到 Google Search Console 上的 Sitemap 功能頁面新增 sitemap.xml。</p><p>這樣以後 Google 的爬蟲就會定期去看 sitemap.xml 檔案是否有更新，若有更新他就會去爬你的網站並加入到搜尋引擎中了。</p><blockquote><p>如果有特定的頁面不希望被加入 sitemap.xml 中，可以在頁面的 markdown 中 Front-matter 設定 <code>sitemap: false</code>。</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">sitemap: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure></blockquote><h2 id="robots-txt-管理爬蟲"><a href="#robots-txt-管理爬蟲" class="headerlink" title="robots.txt 管理爬蟲"></a>robots.txt 管理爬蟲</h2><p><code>robots.txt</code> 與設定 meta robots 不同在於，meta 內設定的是<strong>建立索引</strong> (index) 和<strong>連結權重</strong> (follow)，而 robots.txt 設定的是告訴爬蟲機器人哪些是可以爬的，哪些是不能爬的。</p><p><strong>建立索引</strong>只在當爬蟲機器人要把你的網址索引在搜尋引擎上時會作用。<strong>連結權重</strong>只負責決定你的頁面是否擔保連出去的連結。然而不管有沒有設定上面兩個，爬蟲機器人都有可能會進到你的網站爬取資料，例如從別人的網站連結近來，如果你有某個頁面不希望被爬到，除了在 sitemap.xml 內不要放入這個頁面外，還可以在網頁根目錄中配置一個檔案 <code>robots.txt</code>，用來控制爬蟲機器人在網站中某些頁面能不能存取。</p><p>這裡我沒有特別需要阻擋特定頁面，因此 <code>robots.txt</code> 設定全部允許。</p><ul><li><p>User-agent : 爬蟲程式的名字</p><p>必要項目，可以在每項規則中指定一或多個 user-agent。</p></li><li><p>Disallow : 不應爬取的網頁網址</p><p>每項規則至少要有一個 Disallow 或 Allow 的指令，Disallow 用以表示禁止爬蟲程式的項目。若為網頁，應撰寫完整的相對路徑；若為目錄，則必須以 / 作為結尾。</p></li><li><p>Allow : 允許爬取的網頁網址</p><p>每項規則至少要有一個 Disallow 或 Allow 的指令，Allow 用以表示允許爬蟲程式的項目，可覆蓋以 Disallow 禁止的項目。若為網頁，應撰寫完整的相對路徑；若為目錄，則必須以 / 作為結尾。</p></li><li><p>Crawl-delay : 抓取網頁前延遲</p></li></ul><p>非必要項目，用以告訴在開始抓取網頁前延遲多久，單位為毫秒。</p><ul><li><p>Sitemap : 網站地圖的路徑</p><p>非必要，可以透過這個指令指出 XML 網站地圖的位置，也可以同時提供多個網站地圖分行列出，此項目應使用絕對路徑。</p></li></ul><figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">User-agent: *</span><br><span class="line">Disallow:</span><br><span class="line"></span><br><span class="line">Sitemap: https://example.com/sitemap</span><br></pre></td></tr></table></figure><h2 id="Google-Analytics-分析流量"><a href="#Google-Analytics-分析流量" class="headerlink" title="Google Analytics 分析流量"></a>Google Analytics 分析流量</h2><p>在搜尋引擎收錄完我們的文章後，我們可以利用 <a target="_blank" rel="noopener" href="https://analytics.google.com/">Google Analytics</a>（簡稱 GA） 分析我們的網站流量，從分析結果了解我們網站的效果。首先進入 GA 建立帳戶，建立完帳戶後再新增資源，之後再新增串流，也就是我們的網站，完成後依照說明讓網頁嵌入指定代碼即可。</p><blockquote><p>測試使用者方法可以開無痕視窗瀏覽，讓瀏覽器重新請求一次。</p></blockquote></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者:</span> <span class="post-copyright-info"><a rel="noopener" href="mailto:fyc621@gmail.com">YuCheng</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章連結:</span> <span class="post-copyright-info"><a rel="noopener" href="https://blog.yucheng.me/post/hexo-configuration/">https://blog.yucheng.me/post/hexo-configuration/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版權聲明:</span> <span class="post-copyright-info">本站所有文章除特別聲明外，均採用 <a rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 許可協議。轉載請註明來自 <a rel="noopener" href="https://blog.yucheng.me" target="_blank">YuCheng</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%AD%90%E7%B6%B2%E5%9F%9F/">子網域</a><a class="post-meta__tags" href="/tags/%E7%B6%B2%E7%AB%99%E5%9C%B0%E5%9C%96/">網站地圖</a><a class="post-meta__tags" href="/tags/%E6%90%9C%E5%B0%8B%E5%BC%95%E6%93%8E%E6%94%B6%E9%8C%84/">搜尋引擎收錄</a><a class="post-meta__tags" href="/tags/Google-Analytics/">Google Analytics</a></div><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/post/hexo-butterfly-theme-configuration/"><img class="next-cover" rel="noopener" alt="next-cover" data-lazy-src="https://cdn.jsdelivr.net/gh/YuCheng21/cdn-yucheng@master/blog/cover/004.svg" onerror='onerror=null,src="https://cdn.jsdelivr.net/gh/YuCheng21/cdn-yucheng@master/blog/404/404_cat.svg"'><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Hexo ButterFly 主題配置</div></div></a></div></nav><hr><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i> <span>評論</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside_content" id="aside_content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E8%A8%82%E6%96%87%E7%AB%A0%E7%B6%B2%E5%9D%80"><span class="toc-number">1.</span> <span class="toc-text">自訂文章網址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E8%A8%82%E7%B6%B2%E7%AB%99%E7%B6%B2%E5%9D%80"><span class="toc-number">2.</span> <span class="toc-text">自訂網站網址</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A8%AD%E5%AE%9A-Hexo-%E9%85%8D%E7%BD%AE%E6%AA%94"><span class="toc-number">2.1.</span> <span class="toc-text">設定 Hexo 配置檔</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A8%AD%E5%AE%9A%E7%B6%B2%E5%9D%80-DNS"><span class="toc-number">2.2.</span> <span class="toc-text">設定網址 DNS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A8%AD%E5%AE%9A-Github-Repositories"><span class="toc-number">2.3.</span> <span class="toc-text">設定 Github Repositories</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A8%AD%E5%AE%9A-CNAME"><span class="toc-number">2.4.</span> <span class="toc-text">設定 CNAME</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A8%AD%E5%AE%9A%E6%96%B0%E5%A2%9E%E6%96%87%E7%AB%A0%E6%A0%BC%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">設定新增文章格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A8%AD%E5%AE%9A%E4%B8%8D%E6%B8%B2%E6%9F%93%E7%9A%84%E6%AA%94%E6%A1%88"><span class="toc-number">4.</span> <span class="toc-text">設定不渲染的檔案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%90%84%E5%88%A5%E6%96%87%E7%AB%A0%E8%B3%87%E6%96%99%E5%A4%BE"><span class="toc-number">5.</span> <span class="toc-text">使用各別文章資料夾</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A6%96%E9%A0%81%E6%AF%8F%E9%A0%81%E9%A1%AF%E7%A4%BA%E7%9A%84%E6%96%87%E7%AB%A0%E6%95%B8"><span class="toc-number">6.</span> <span class="toc-text">首頁每頁顯示的文章數</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sitemap-xml-%E6%90%9C%E5%B0%8B%E5%BC%95%E6%93%8E%E7%88%AC%E8%9F%B2"><span class="toc-number">7.</span> <span class="toc-text">sitemap.xml 搜尋引擎爬蟲</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#robots-txt-%E7%AE%A1%E7%90%86%E7%88%AC%E8%9F%B2"><span class="toc-number">8.</span> <span class="toc-text">robots.txt 管理爬蟲</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Google-Analytics-%E5%88%86%E6%9E%90%E6%B5%81%E9%87%8F"><span class="toc-number">9.</span> <span class="toc-text">Google Analytics 分析流量</span></a></li></ol></div></div></div></div></div></main><footer id="footer" style="background:#69a4a7"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By YuCheng</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="簡繁轉換">繁</button><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="設定"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直達評論"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到頂部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜尋</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜尋文章" type="text"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>Powered by</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49b1f5">hexo-generator-search</a></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk({
+      clientID: 'e00de512df14d39331b3',
+      clientSecret: '8acd951c76164d4e0b24b73620af7054ae96abc4',
+      repo: 'blog-comments',
+      owner: 'YuCheng21',
+      admin: ['YuCheng21'],
+      id: 'post/hexo-configuration/',
+      language: 'zh-TW',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    })
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    $.getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js', initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><div class="app-refresh" id="app-refresh"><div class="app-refresh-wrap"><label>✨ 網站已更新最新版本 👉</label> <a href="javascript:void(0)" onclick="location.reload()">點擊刷新</a></div></div><script>function showNotification(){if(GLOBAL_CONFIG.Snackbar){var t="light"===document.documentElement.getAttribute("data-theme")?GLOBAL_CONFIG.Snackbar.bgLight:GLOBAL_CONFIG.Snackbar.bgDark,e=GLOBAL_CONFIG.Snackbar.position;Snackbar.show({text:"已更新最新版本",backgroundColor:t,duration:5e5,pos:e,actionText:"點擊刷新",actionTextColor:"#fff",onActionClick:function(t){location.reload()}})}else{var o=`top: 0; background: ${"light"===document.documentElement.getAttribute("data-theme")?"#49b1f5":"#1f1f1f"};`;document.getElementById("app-refresh").style.cssText=o}}"serviceWorker"in navigator&&(navigator.serviceWorker.controller&&navigator.serviceWorker.addEventListener("controllerchange",function(){showNotification()}),window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js")}));</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config_change',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: true,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  $('script[data-pjax]').each(function () {
+    $(this).parent().append($(this).remove())
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  if (typeof gtag === 'function') {
+    gtag('config', 'UA-176722311-1', {'page_path': window.location.pathname});
+  }
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  $(window).off('scroll')
+
+  //reset readmode
+  $('body').hasClass('read-mode') && $('body').removeClass('read-mode')
+
+})</script></div></body></html>
